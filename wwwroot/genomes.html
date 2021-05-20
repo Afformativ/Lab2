@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Genomes</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="index.html">Viruses</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="genomes.html">Genomes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="scientists.html">Scientists</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="organisms.html">Organisms</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="disc.html">Discoveries</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <h1>Genomes</h1>
+    <h3>Add Genome</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addGenome()">
+        <input type="text" id="add-nameGen" class="form-control" placeholder="New Genome">
+        <input type="text" id="add-strand" class="form-control" placeholder="New Strand">
+        <input type="text" id="add-sense" class="form-control" placeholder="New Sense">
+        <input type="submit" value="Add" class="btn btn-success">
+    </form>
+
+    <div>
+        <label class="invalid-feedback" id="add-gn"></label>
+        <label class="invalid-feedback" id="add-gs"></label>
+        <label class="invalid-feedback" id="add-gss"></label>
+    </div>
+
+    <div id="editGenome">
+        <h3>Edit</h3>
+        <form action="javascript:void(0);" onsubmit="updateGenome()">
+            <input type="hidden" id="edit-idGen">
+            <input type="text" class="form-control" id="edit-nameGen">
+            <input type="text" class="form-control" id="edit-strand">
+            <input type="text" class="form-control" id="edit-sense">
+            <input type="submit" value="Save" class="btn btn-info">
+        </form>
+    </div>
+    <div>
+        <label class="invalid-feedback" id="ed-gn"></label>
+        <label class="invalid-feedback" id="ed-gs"></label>
+        <label class="invalid-feedback" id="ed-gss"></label>
+    </div>
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Strand</th>
+            <th>Sense</th>
+        </tr>
+        <tbody id="genomes"></tbody>
+    </table>
+
+    <script src="js/webapp.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getGenomes();
+    </script>
+</body>
+</html>

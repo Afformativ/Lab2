@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Discoveries</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="disc.html">Viruses</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="genomes.html">Genomes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="scientists.html">Scientists</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="organisms.html">Organisms</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="disc.html">Discoveries</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <h1>Discoveries</h1>
+    <h3>Add Discovery</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addDisc()">
+        <input type="text" id="add-vir" class="form-control" placeholder="New Virus">
+        <input type="text" id="add-sci" class="form-control" placeholder="New Scientist">
+        <input type="text" id="add-yea" class="form-control" placeholder="New Year">
+        <input type="submit" value="Add" class="btn btn-success">
+    </form>
+
+    <div>
+        <label class="invalid-feedback" id="add-v"></label>
+        <label class="invalid-feedback" id="add-s"></label>
+        <label class="invalid-feedback" id="add-y"></label>
+    </div>
+
+    <div id="editDisc">
+        <h3>Edit</h3>
+        <form action="javascript:void(0);" onsubmit="updateDisc()">
+            <input type="hidden" id="edit-i">
+            <input type="text" class="form-control" id="edit-v">
+            <input type="text" class="form-control" id="edit-s">
+            <input type="text" class="form-control" id="edit-y">
+            <input type="submit" value="Save" class="btn btn-info">
+        </form>
+    </div>
+    <div>
+        <label class="invalid-feedback" id="ed-v"></label>
+        <label class="invalid-feedback" id="ed-s"></label>
+        <label class="invalid-feedback" id="ed-y"></label>
+    </div>
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>Virus</th>
+            <th>Scientist</th>
+            <th>Year</th>
+        </tr>
+        <tbody id="discs"></tbody>
+    </table>
+
+    <script src="js/virusscientist.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getDisc();
+    </script>
+</body>
+</html>

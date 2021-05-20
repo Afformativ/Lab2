@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Scientists</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="index.html">Viruses</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="genomes.html">Genomes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="scientists.html">Scientists</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="organisms.html">Organisms</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="disc.html">Discoveries</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <h1>Scientists</h1>
+    <h3>Add Scientist</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addScientist()">
+        <input type="text" id="add-na" class="form-control" placeholder="New Scientist">
+        <input type="text" id="add-co" class="form-control" placeholder="New Country">
+        <input type="submit" value="Add" class="btn btn-success">
+    </form>
+
+    <div>
+        <label class="invalid-feedback" id="add-ns"></label>
+        <label class="invalid-feedback" id="add-cs"></label>
+    </div>
+
+    <div id="editScientist">
+        <h3>Edit</h3>
+        <form action="javascript:void(0);" onsubmit="updateScientist()">
+            <input type="hidden" id="edit-id">
+            <input type="text" class="form-control" id="edit-na">
+            <input type="text" class="form-control" id="edit-co">
+            <input type="submit" value="Save" class="btn btn-info">
+        </form>
+    </div>
+
+    <div>
+        <label class="invalid-feedback" id="ed-ns"></label>
+        <label class="invalid-feedback" id="ed-cs"></label>
+    </div>
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Country</th>
+        </tr>
+        <tbody id="scientists"></tbody>
+    </table>
+
+    <script src="js/scientists.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getScientists();
+    </script>
+</body>
+</html>
